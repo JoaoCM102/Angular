@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { AdminComponent } from './admin.component';
+import { BarcosTablaComponent } from './barcos-tabla.component';
 
-describe('AdminComponent', () => {
-  let component: AdminComponent;
-  let fixture: ComponentFixture<AdminComponent>;
+describe('BarcosTablaComponent', () => {
+  let component: BarcosTablaComponent;
+  let fixture: ComponentFixture<BarcosTablaComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AdminComponent]
+      declarations: [BarcosTablaComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(AdminComponent);
+    fixture = TestBed.createComponent(BarcosTablaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

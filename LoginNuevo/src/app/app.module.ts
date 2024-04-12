@@ -12,7 +12,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InterceptorJWTService } from './services/auth/interceptor-jwt.service';
 import { UserComponent } from './pages/user/user.component';
-import { AdminComponent } from './pages/admin/admin.component';
+import { DatosPersonalesComponent } from './pages/datos-personales/datos-personales.component';
+import { BarcosTablaComponent } from './pages/barcos-tabla/barcos-tabla.component';
+import { SalidaTablaComponent } from './pages/salida-tabla/salida-tabla.component';
+import { PatronTablaComponent } from './pages/patron-tabla/patron-tabla.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +26,10 @@ import { AdminComponent } from './pages/admin/admin.component';
     NavComponent,
     DashboardComponent,
     UserComponent,
-    AdminComponent
+    DatosPersonalesComponent,
+    BarcosTablaComponent,
+    SalidaTablaComponent,
+    PatronTablaComponent
   ],
   imports: [
     BrowserModule,
