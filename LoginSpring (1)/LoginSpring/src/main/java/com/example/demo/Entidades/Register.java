@@ -1,5 +1,7 @@
 package com.example.demo.Entidades;
 
+import com.example.demo.User.Role;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +17,8 @@ public class Register {
 	String fistname;
 	String lastName;
 	String country;
-	
+	Datos datos;
+	Role role;
 	
 	
 }

@@ -63,5 +63,5 @@ public class User implements UserDetails {
     		name = "datos",
     		referencedColumnName = "idDatos")
     @JsonIgnore
-    private Datos datos ;
+     Datos datos ;
 }
