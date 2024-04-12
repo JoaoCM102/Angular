@@ -8,6 +8,7 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import com.example.demo.Entidades.Datos;
+import com.example.demo.Entidades.Socio;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.*;
@@ -58,10 +59,23 @@ public class User implements UserDetails {
         return true;
     }
 
-    @OneToOne
+    @OneToOne(
+        cascade = CascadeType.ALL
+    )
     @JoinColumn(
     		name = "datos",
     		referencedColumnName = "idDatos")
     @JsonIgnore
      Datos datos ;
+     
+
+     @OneToOne(
+        cascade = CascadeType.ALL
+    )
+    @JoinColumn(
+    		name = "socio",
+    		referencedColumnName = "idSocio")
+    @JsonIgnore
+     Socio socio ;
+
 }

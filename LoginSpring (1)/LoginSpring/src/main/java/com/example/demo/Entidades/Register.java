@@ -19,6 +19,6 @@ public class Register {
 	String country;
 	Datos datos;
 	Role role;
-	
+	Socio socio;
 	
 }

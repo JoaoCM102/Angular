@@ -16,6 +16,7 @@ export class RegisterService {
 
   register(credentials:RegisterRequest):Observable<RegisterRequest>{
     console.info(credentials)
+    credentials.role='USER'
     return this.http.post<any>(enviroment.urlHost+"auth/register",credentials).pipe(
      tap((userData)=> {sessionStorage.setItem("token",userData.token);
 

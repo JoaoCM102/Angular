@@ -4,8 +4,10 @@ export interface RegisterRequest{
     lastName?:string,
     password:string,
     username:string,
-    datos: DatosRequest
+    datos: DatosRequest,
+    role : Role
 }
+type Role = 'ADMIN' | 'USER';
 
 export interface DatosRequest{
     email:string,

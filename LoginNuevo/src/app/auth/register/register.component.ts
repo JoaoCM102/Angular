@@ -40,7 +40,7 @@ export class RegisterComponent implements OnInit {
         },
         error:(userData) => {
             console.log(userData)
-            this.router.navigateByUrl("/registro")
+            this.router.navigateByUrl("/inicioSesion")
             alert("Error al registrar sesion")
         },
         complete:()=> {

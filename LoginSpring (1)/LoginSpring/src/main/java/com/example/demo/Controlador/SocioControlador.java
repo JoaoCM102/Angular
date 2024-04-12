@@ -40,10 +40,6 @@ public class SocioControlador {
 		return ResponseEntity.ok(servicio.findById(idSocio));
 	}
 	
-	@PostMapping()
-	public ResponseEntity<String> postSocio(@RequestBody Socio socio){
-		return servicio.subirSocio(socio);
-	}
 	
 	@PutMapping("/{idSocio}")
 	public String putMethodName(@PathVariable long idSocio, @RequestBody Socio socio) {

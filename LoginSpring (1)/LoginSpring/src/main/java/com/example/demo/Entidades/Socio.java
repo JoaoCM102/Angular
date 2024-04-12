@@ -4,6 +4,8 @@ import java.util.List;
 
 import org.springframework.validation.annotation.Validated;
 
+import com.example.demo.User.User;
+
 import jakarta.persistence.Basic;
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -14,6 +16,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
@@ -23,7 +26,6 @@ import lombok.NoArgsConstructor;
 @Data
 @Validated
 @NoArgsConstructor
-@AllArgsConstructor
 @Entity
 public class Socio {
 	@Id
@@ -53,6 +55,9 @@ public class Socio {
     		fetch = FetchType.EAGER)
     private List<Barco> barcos;
     
-    
+
+    @OneToOne(
+    		mappedBy = "socio")
+    private User user;
     
 }

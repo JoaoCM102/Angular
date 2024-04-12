@@ -40,7 +40,7 @@ public class Datos {
 	
 	@NotNull
     private String email;
-    private double telefono; 
+    private String telefono; 
     
     @JsonIgnore
     @OneToOne(
