@@ -1,0 +1,44 @@
+.menu {
+  padding-top: 5%;
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+    margin: 0 auto; /* Centra horizontalmente */
+    
+  }
+  h1{
+    padding-top: 3%;
+    text-align: center;
+  }
+  .container {
+    display: flex;
+    padding-top: 2%;
+    width: 800px; /* Ajusta el ancho según tus necesidades */
+    margin: 0 auto; 
+    
+  }
+  
+  .left {
+    padding-left: 10%;
+    align-self: flex-start;
+  }
+  
+  .right {
+    margin-bottom: auto; 
+    padding-left: 10%;
+    align-self: flex-end;
+  }
+  .button{
+    text-align: center;
+    margin: 0 auto;
+    align-items: center;
+  }
+
+  body{
+    align-items: center;
+  }
+
+  .ng-valid:not(form).ng-touched{
+    border-left: 5px solid #42A948;
+  }
+  .ng-invalid:not(form).ng-touched{
+    border-left: 5px solid #A94442;
+  }
