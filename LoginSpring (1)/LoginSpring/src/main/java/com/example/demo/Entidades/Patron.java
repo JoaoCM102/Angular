@@ -14,11 +14,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Email;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
-@Validated
 @Data
+@Validated
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Patron {
 	
 	@Id

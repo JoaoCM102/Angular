@@ -16,11 +16,15 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Email;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
-@Validated
 @Data
+@Validated
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Socio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

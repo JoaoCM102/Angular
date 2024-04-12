@@ -13,11 +13,15 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@Entity
-@Validated
 @Data
+@Validated
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
 public class Salida {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
