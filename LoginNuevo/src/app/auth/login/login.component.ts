@@ -43,7 +43,7 @@ export class LoginComponent implements OnInit{
             console.info(this.loginService.currentUserLogin.value)
             this.router.navigateByUrl("inicio");
            this.login.reset();
-        },
+        }
       });
     }else{
       this.login.markAllAsTouched();
