@@ -10,12 +10,13 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>sdc</td>
-        <td>sdc</td>
-        <td>sdc</td>
+      <tr *ngFor="let patron of patronDatos">
+        <th scope="row">{{patron.idPatron}}</th>
+        <td>{{patron.nombre}}</td>
+        <td>{{patron.apellido}}</td>
+        <td>{{patron.direccion}}</td>
+        <td>{{patron.email}}</td>
+        <td>{{patron.telefono}}</td>
+      </tr>
     </tbody>
   </table>
