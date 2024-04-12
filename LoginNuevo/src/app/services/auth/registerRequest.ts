@@ -41,3 +41,9 @@ export interface Socio {
     telefono: string;
     email?: string;
 }
+export interface Salida {
+    idSalida: number;
+    hora: string;
+    fecha: string;
+    destino: string;
+}

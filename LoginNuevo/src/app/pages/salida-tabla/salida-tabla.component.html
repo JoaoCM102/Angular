@@ -8,10 +8,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>sdc</td>
+      <tr *ngFor="let salida of salidaDatos" (click)="dato()">
+        <th scope="row" >{{salida.idSalida}}</th>
+        <td>{{salida.destino}}</td>
+        <td>{{salida.fecha}}</td>
+        <td>{{salida.hora}}</td>
+        </tr>
     </tbody>
   </table>
+  <button (click)="dato()">Click Me</button>
