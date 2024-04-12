@@ -11,6 +11,8 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { InterceptorJWTService } from './services/auth/interceptor-jwt.service';
+import { UserComponent } from './pages/user/user.component';
+import { AdminComponent } from './pages/admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { InterceptorJWTService } from './services/auth/interceptor-jwt.service';
     RegisterComponent,
     FooterComponent,
     NavComponent,
-    DashboardComponent
+    DashboardComponent,
+    UserComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
