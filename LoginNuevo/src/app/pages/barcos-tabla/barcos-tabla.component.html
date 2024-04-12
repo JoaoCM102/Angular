@@ -9,11 +9,12 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>sdc</td>
-        <td>sdc</td>
+      <tr *ngFor="let barco of barcoDato">
+        <th scope="row">{{barco.idBarco}}</th>
+        <td>{{barco.nombre}}</td>
+        <td>{{barco.cuota}}</td>
+        <td>{{barco.numeroAmarre}}</td>
+        <td>{{barco.numeroMatricula}}</td>
+      </tr>
     </tbody>
   </table>

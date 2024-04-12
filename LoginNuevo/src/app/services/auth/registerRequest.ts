@@ -15,3 +15,29 @@ export interface DatosRequest{
     codigoPostal:string,
     calle:string
 }
+
+
+export interface Barco {
+    idBarco?: number;
+    numeroMatricula: string;
+    nombre: string;
+    numeroAmarre: number;
+    cuota: number;
+}
+export interface Patron {
+    idPatron?: number;
+    nombre: string;
+    apellido: string;
+    direccion: string;
+    telefono: string;
+    email?: string;
+}
+
+export interface Socio {
+    idSocio?: number;
+    nombre: string;
+    apellido: string;
+    direccion: string;
+    telefono: string;
+    email?: string;
+}

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Barco } from '../../services/auth/registerRequest';
 
 @Component({
   selector: 'app-barcos-tabla',
@@ -6,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './barcos-tabla.component.css'
 })
 export class BarcosTablaComponent {
+  barcoDato?:Barco[];
 
+  
+  constructor(){}
 }
