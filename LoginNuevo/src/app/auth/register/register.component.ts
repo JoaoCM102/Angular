@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RegisterService } from '../../services/auth/register.service';
 import { DatosRequest, RegisterRequest } from '../../services/auth/registerRequest';
+import { LoginService } from '../../services/auth/login.service';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -36,10 +37,12 @@ export class RegisterComponent implements OnInit {
     if (this.register.valid) {
       this.registerService.register(this.register.value as RegisterRequest).subscribe({
         next: (userData) =>{
+          this.login.logout();
           console.log(userData)
         },
         error:(userData) => {
             console.log(userData)
+            
             this.router.navigateByUrl("/inicioSesion")
             alert("Error al registrar sesion")
         },
@@ -57,7 +60,7 @@ export class RegisterComponent implements OnInit {
     }
   }
 
-  constructor(private formBuilder: FormBuilder, private router: Router, private registerService: RegisterService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private registerService: RegisterService,private login:LoginService) { }
 
   ngOnInit(): void { }
 }

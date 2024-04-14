@@ -1,7 +1,7 @@
 export interface RegisterRequest{
     country:string,
-    fistname:string,
-    lastName?:string,
+    firstname:string,
+    lastname?:string,
     password:string,
     username:string,
     datos: DatosRequest,

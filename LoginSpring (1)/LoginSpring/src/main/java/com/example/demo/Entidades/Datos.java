@@ -42,9 +42,9 @@ public class Datos {
     private String email;
     private String telefono; 
     
-    @JsonIgnore
     @OneToOne(
     		mappedBy = "datos")
+	@JsonIgnore
     private User user;
 }
 

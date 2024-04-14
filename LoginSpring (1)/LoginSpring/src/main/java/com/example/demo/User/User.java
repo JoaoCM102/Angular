@@ -65,7 +65,6 @@ public class User implements UserDetails {
     @JoinColumn(
     		name = "datos",
     		referencedColumnName = "idDatos")
-    @JsonIgnore
      Datos datos ;
      
 
@@ -75,7 +74,6 @@ public class User implements UserDetails {
     @JoinColumn(
     		name = "socio",
     		referencedColumnName = "idSocio")
-    @JsonIgnore
      Socio socio ;
 
 }

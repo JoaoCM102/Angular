@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { Salida } from '../auth/registerRequest';
@@ -17,7 +17,8 @@ export class SalidaService {
    }
    
    listaSalidaToda():Observable<Salida[]>{
-    return this.http.get<Salida[]>(enviroment.urlHost+"ver/salida/all").pipe(
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem(`token`)}`);
+    return this.http.get<Salida[]>(enviroment.urlHost+"ver/salida/all",{headers}).pipe(
       catchError(this.handleError)
     );
    }

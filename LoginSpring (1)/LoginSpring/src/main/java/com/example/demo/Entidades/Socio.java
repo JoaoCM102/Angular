@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.validation.annotation.Validated;
 
 import com.example.demo.User.User;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Basic;
 import jakarta.persistence.CascadeType;
@@ -58,6 +59,7 @@ public class Socio {
 
     @OneToOne(
     		mappedBy = "socio")
+	@JsonIgnore
     private User user;
     
 }

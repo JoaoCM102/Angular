@@ -1,4 +1,4 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, throwError } from 'rxjs';
 import { enviroment } from '../auth/url';
@@ -17,7 +17,8 @@ export class BarcoService {
    }
    
    listaBarcoToda():Observable<Barco[]>{
-    return this.http.get<Barco[]>(enviroment.urlHost+"ver/barco/all").pipe(
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem(`token`)}`);
+    return this.http.get<Barco[]>(enviroment.urlHost+"ver/barco/all",{headers}).pipe(
       catchError(this.handleError)
     );
    }

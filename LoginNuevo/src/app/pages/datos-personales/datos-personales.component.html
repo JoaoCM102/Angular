@@ -1,8 +1,11 @@
 <div >
-    <p><b> Nombre: </b> Juan</p>
-    <p><b> Apellido: </b> España</p>
-    <p><b> Pais: </b> Francia</p>
-    <button class="btn btn-dark"><img
-        src="https://cdn.icon-icons.com/icons2/1572/PNG/96/3592815-compose-create-edit-edit-file-office-pencil-writing_107734.png"
-        width="8%" alt="editar" />Editar Datos Personales</button>
+    <p><b> Nombre: </b> {{datosUsuario?.firstname}}</p>
+    <p><b> Apellidos: </b> {{datosUsuario?.lastname}}</p>
+    <p><b> Username: </b> {{datosUsuario?.username}}</p>
+    <p><b> Country: </b> {{datosUsuario?.country}}</p>
+    <p><b> Email: </b> {{datosUsuario?.datos?.email}}</p>
+    <p><b> Telefono: </b> {{datosUsuario?.datos?.telefono}}</p>
+    <p><b> Codigo Postal: </b> {{datosUsuario?.datos?.codigoPostal}}</p>
+    <p><b> Calle: </b> {{datosUsuario?.datos?.calle}}</p>
+    
 </div>

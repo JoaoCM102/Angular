@@ -21,8 +21,11 @@ export class DashboardComponent implements OnInit{
     this.login.currentUserLogin.subscribe({
       next:(userOn)=>{
         this.verOn=userOn;
+        console.info(userOn)
       }
     });
+
+    
 
     this.login.currentUserData.subscribe({
       next:(userOn)=>{
@@ -30,26 +33,7 @@ export class DashboardComponent implements OnInit{
         console.info(this.token)
       }
     });
-
-    
-    if (this.token!="") {
-      console.info(this.token)
-    const tokenPayload = this.token.split('.')[1];
-    const decodedPayload = atob(tokenPayload);
-    this.decodedToken = JSON.parse(decodedPayload);
-    console.log('Token decodificado:', this.decodedToken);
-    console.log('id ' + this.decodedToken.sub)
-    console.log(this.register.verDatos("pedro"))
-    this.register.verDatos("pedro").subscribe({
-      next:(datos : RegisterRequest)=>{
-        console.info(datos.country)
-        this.datosUsuario= datos
-      }
-    });
-  } else {
-    console.log('No se encontró ningún token en el sessionStorage.');
-  }
-  }
   
 
+}
 }
