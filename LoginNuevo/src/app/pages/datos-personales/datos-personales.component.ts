@@ -16,7 +16,6 @@ export class DatosPersonalesComponent implements OnInit {
 
 
   constructor(private login:LoginService,private register:RegisterService){
-    this.token = sessionStorage.getItem(`token`) || null;
   }
   ngOnInit(): void {
     this.login.currentUserLogin.subscribe({
@@ -41,8 +40,7 @@ export class DatosPersonalesComponent implements OnInit {
     this.decodedToken = JSON.parse(decodedPayload);
     console.log('Token decodificado:', this.decodedToken);
     console.log('id ' + this.decodedToken.sub)
-    console.log(this.register.verDatos("pedro"))
-    this.register.verDatos("pedro").subscribe({
+    this.register.verDatos(this.decodedToken.sub.toString()).subscribe({
       next:(datos : RegisterRequest)=>{
         console.info(datos.country)
         this.datosUsuario= datos

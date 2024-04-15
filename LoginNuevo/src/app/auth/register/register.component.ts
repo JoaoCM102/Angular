@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RegisterService } from '../../services/auth/register.service';
 import { DatosRequest, RegisterRequest } from '../../services/auth/registerRequest';
 import { LoginService } from '../../services/auth/login.service';
+import { LoginRequest } from '../../services/auth/loginRequest';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -29,6 +30,7 @@ export class RegisterComponent implements OnInit {
   })
 
 
+  logueo: LoginRequest | undefined 
   
 
 
@@ -47,9 +49,7 @@ export class RegisterComponent implements OnInit {
             alert("Error al registrar sesion")
         },
         complete:()=> {
-            console.info("login completo ")
-            this.router.navigateByUrl("inicio");
-           this.register.reset();
+          this.router.navigateByUrl("/inicioSesion")
         },
       }
       )

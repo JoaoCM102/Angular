@@ -11,15 +11,9 @@ import { LoginService } from './login.service';
 })
 export class RegisterService {
   token : string | null = ""
-  currentUserLogin: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
-  currentUserData: BehaviorSubject<string> = new BehaviorSubject<string>("");
 
   constructor(private http: HttpClient,private login:LoginService) { 
-    this.currentUserLogin= new BehaviorSubject<boolean>(sessionStorage.getItem("token")!=null);
-    this.currentUserData= new BehaviorSubject<string>(sessionStorage.getItem("token")|| "");
-    this.token = sessionStorage.getItem(`token`) || null;
   }
-
 
 
   register(credentials:RegisterRequest):Observable<RegisterRequest>{
@@ -28,8 +22,6 @@ export class RegisterService {
     return this.http.post<any>(enviroment.urlHost+"auth/register",credentials).pipe(
      tap((userData)=> {
       sessionStorage.setItem("token",userData.token);
-     this.login.currentUserData.next(userData);
-     this.login.currentUserLogin.next(true);
 
      }),
      map((userData)=> userData.token)
@@ -37,7 +29,7 @@ export class RegisterService {
    }
  
    verDatos(username:string): Observable<RegisterRequest> {
-    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem(`token`)}`);
 
     console.info(this.token)
     return this.http.get<RegisterRequest>(`${enviroment.urlHost}ver/datos/${username}`, { headers }).pipe(
@@ -50,14 +42,6 @@ export class RegisterService {
       console.error('Error', error.error);
     }else{console.error('Backend retorno el codigo', error.status)}
     return throwError(()=> new Error("Algo fallo , "+ error.message))
-  }
-
-  get userData():Observable<string>{
-    return this.currentUserData.asObservable();
-  }
-
-  get userLoginOn():Observable<boolean>{
-    return this.currentUserLogin.asObservable();
   }
 
 }

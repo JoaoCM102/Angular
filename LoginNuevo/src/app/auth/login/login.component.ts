@@ -28,6 +28,7 @@ export class LoginComponent implements OnInit{
   ngOnInit(): void {}
 
   loginAction(){
+    this.loginService.logout();
     if (this.login.valid) {
       this.loginService.login(this.login.value as LoginRequest).subscribe({
         next: (userData) =>{
